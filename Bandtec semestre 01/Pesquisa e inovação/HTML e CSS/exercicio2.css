@@ -1,0 +1,16 @@
+.div1{
+height: 100px;
+width: 100px;
+background-color: crimson;
+margin: 50px;
+}
+
+.div2{
+height: 500px;
+width: 500px;
+background-color: lightblue;
+border: 5px solid rgb(179, 36, 36);
+padding: 25px;
+font-size: 30px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

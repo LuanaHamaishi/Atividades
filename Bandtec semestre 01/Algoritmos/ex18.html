@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times</title>
+</head>
+<body>
+    <!--  
+
+d) Ao lado das imagens dos escudos dos times, deve haver um botão "Resetar programa". Ao clicar nele, todas as imagens de troféu que eventualmente estiverem na tela, devem sumir 
+
+ 
+
+e) Ao lado do botão do item d) deve haver outro botão, o "Esconder escudos". Ao clicar nele, todos os escudos dos clubes somem, bem como o próprio botão "Esconder escudos". E aparece um outro botão, o "Mostrar escudos". Ao clicar nele, ele mesmo some e os escudos e o botão "Esconder escudos" reaparece.  
+
+ -->
+
+ <div id="div_imagens">
+<img src="palmeiras.png" alt="escudo do palmeiras" onclick="palmeiras()" style="height: 100px;">
+<img src="saopaulo.png" alt="escudo do são paulo" onclick="saopaulo()" style="height: 100px;">
+<img src="santos.png" alt="escudo do santos" onclick="santos()" style="height: 100px;">
+<img src="corinthians.png" alt="escudo do corinthians" onclick="corinthians()" style="height: 100px;">
+<button onclick="reset()">esconder escudos</button>
+
+
+
+ </div>
+<div id="div_reset">
+    <button onclick="back()"><img src="reset" alt="" style="height: 100px;"></button>
+</div>
+
+
+
+    
+</body>
+</html>
+
+<script>
+
+function palmeiras() {
+div_imagens.innerHTML += '<img src="taça 02" style="height: 200px">';
+    
+}
+
+function saopaulo() {
+    div_imagens.innerHTML += '<img src="taça 01" style="height: 100px"><img src="taça 01" style="height: 100px"<img src="taça 01" style="height: 100px"><img src="taça 01" style="height: 100px">';
+    
+}
+
+function santos() {
+    div_imagens.innerHTML += '<img src="taça 01" style="height: 100px"><img src="taça 01" style="height: 100px">'
+    
+}
+
+function corinthians() {
+    
+    div_imagens.innerHTML += '<img src="taça 01" style="height: 100px"><img src="taça 01" style="height: 100px">'
+}
+
+function reset() {
+    div_imagens.innerHTML = ""
+  
+
+
+    
+}
+function back() {
+    div_reset.innerHTML = ''
+    
+}
+
+
+
+
+
+</script>

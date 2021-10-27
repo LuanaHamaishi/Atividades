@@ -1,0 +1,12 @@
+#a {
+    height: 100px;
+    width: 50%;
+    background-color: grey;
+
+}
+
+#b {
+    background-color: goldenrod;
+    height: 100px;
+    width: 80%;
+}

@@ -1,0 +1,94 @@
+use sprint1;
+
+create table Pais (
+	idPais int primary key auto_increment,
+	nome varchar (40),
+	capital varchar (30)
+);
+
+insert into Pais values
+	(null, 'Brasil', 'Brasília'),
+    (null, 'Kosovo', 'Pristina'),
+    (null, 'Namíbia', 'Vinduque'),
+    (null, 'Eslovenia', 'Liubliana');
+    
+select * from pais;
+
+alter table Atleta add column fkPais int;
+alter table Atleta add foreign key (fkPais) references Pais (idPais);
+desc atleta;
+
+select * from atleta;
+
+update Atleta set fkpais = 1 where idAtleta = 2;
+update Atleta set fkpais = 2 where idAtleta = 3;
+update Atleta set fkpais = 3 where idAtleta = 1;
+update Atleta set fkpais = 4 where idAtleta = 4;
+update Atleta set fkpais = 1 where idAtleta = 6;
+update Atleta set fkpais = 2 where idAtleta = 5;
+update Atleta set fkpais = 3 where idAtleta = 8;
+
+select * from atleta;
+
+select * from atleta join Pais on fkPais = idPais;
+
+select * from atleta join Pais on atleta.fkPais = pais.idPais
+	where Pais.nome = 'Kosovo';
+    
+-- EXERCÍCIO 2
+
+select * from musica;
+
+create table Album(
+idAlbum int primary key auto_increment,
+nome varchar (40),
+gravadora varchar (30)
+);
+
+insert into Album values
+(null, 'Quanta', 'Warner Musica Brasil'),
+(null, 'Nova história da MPB', 'Atlantic Records'),
+(null, 'Dentro da estrela azulada', 'Universal Music'),
+(null, 'Patota de cosme', 'Som Livre'),
+(null, 'Televisão', 'WEA'),
+(null, 'Fim de festa', 'Cantagalo'),
+(null, 'Help', 'Parlophone Records');
+
+select * from musica;
+select * from album;
+
+alter table Musica add column fkAlbum int;
+alter table Musica add foreign key (fkAlbum) references Album (idAlbum);
+
+update Musica set fkAlbum = 1 where idMusica = 2;
+update Musica set fkAlbum = 2 where idMusica = 1;
+update Musica set fkAlbum = 3 where idMusica = 4;
+update Musica set fkAlbum = 4 where idMusica = 3;
+update Musica set fkAlbum = 5 where idMusica = 5;
+update Musica set fkAlbum = 6 where idMusica = 6;
+update Musica set fkAlbum = 7 where idMusica = 7;
+
+select * from Musica join Album on fkAlbum = idAlbum;
+
+select * from Musica join Album on fkAlbum = idAlbum 
+	where Album.nome = 'Televisão';
+
+select * from Musica join Album on fkAlbum = idAlbum 
+	where Album.gravadora = 'Universal Music';
+    
+-- wallison
+select titulo, gravadora from musica join album
+	on fkAlbum = idAlbum;
+
+-- lucas
+select nome as 'Nome do Album' from album join musica
+	on fkAlbum=idAlbum;
+
+-- Luana
+select * from musica;
+update musica set genero = 'Musica da Luana' where idMusica = 2;
+    
+
+-- Matheus
+update musica set artista='matheus' where idMusica = 1;
+

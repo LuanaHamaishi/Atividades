@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 35 else if </title>
+</head>
+
+<body>
+
+    <h2>Atacante</h2>
+
+    <h3>Quantos jogos você participou?</h3> <input type="text"  id="qtde_jogos">
+    <br>
+     <h3>Quantos gols você marcou?</h3> <input type="text"  id="qtde_gols">
+    <br>
+     <button onclick="class_atc()">Classificar o atacante</button>
+
+
+</body>
+
+</html>
+
+<script>
+
+
+    function class_atc() {
+        var ax_media = qtde_gols.value / qtde_jogos.value ;
+
+        if (ax_media > 0.6) {
+            alert ("Atacande de FUTURO")
+        } else if (ax_media < 0.2) {
+            alert ("Troque urgentemente de posição")
+        } else {
+            alert ("atacante mediano")
+            
+        }
+    }
+
+
+</script>

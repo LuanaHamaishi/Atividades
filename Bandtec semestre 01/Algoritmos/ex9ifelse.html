@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 9 (desafio). Crie um programa em HTML/JS o qual:
+
+a) No início tenha somente uma combo com os itens:
+
+    - Escolha uma espécie -
+
+    Ovíparos
+
+    Mamiferos
+
+b) Se o usuário escolher o primeiro item, nada acontece e se, eventualmente, tiver algo abaixo da combo, deve desaparecer tudo (ver itens a seguir para entender melhor)
+
+c) Se o usuário escolher "Ovíparos", abaixo da combo deve aparecer outra combo com os itens:
+
+   - Escolha um Ovíparo -
+
+   Galinha
+
+   Peixe
+
+   Tartaruga
+
+d) Se o usuário escolher "Mamíferos", abaixo da combo deve aparecer outra combo com os itens:
+
+   - Escolha um Mamífero -
+
+   Elefante
+
+   Porco
+
+   Coelho
+
+e) Após escolher um animal - seja em c), seja em d), uma foto de um exemplar deve aparecer abaixo da combo. Se não for escolhido um animal válido (ou seja, se for escolhido o primeiro item da lista), a foto que estive, eventualmente aparecendo some. Se nenhum estiver sendo mostrada, continua sem mostrar nada
+
+f) Também após escolher um animal - seja em c), seja em d), abaixo da imagem descrita em e), deve aparecer um campo de texto solicitando o "Valor de compra do animal"
+
+g) Abaixo do campo em f) deve ter um botão "Calcula imposto". Ao clicar nele, aparecer abaixo uma frase como esta:
+
+    O imposto será de R$X
+
+Onde X é:
+
+    - Caso ovíparo: %5 do valor de compra
+
+    - Caso mamífero: %10 do valor de compra
+
+ 
+
+  -->
+    <div id="choice">
+        <select  id= "primeiro" onchange="first_choice()" >
+            <option value="selecione">Selecione uma opção</option>
+            <option value="oviparos">Ovíparos</option>
+            <option value="mamiferos">Mamíferos</option>
+        </select>
+    </div>
+    <div id="oviparo" style="display: none;">
+        <select id="oviparo_opc"  onchange="ovip()">
+            <option value="galinha">Galinha</option>
+            <option value="tartaruga">Tartaruga</option>
+            <option value="peixes">Peixe</option>
+        </select>
+    </div>
+    <div id="mamifero" style="display: none;" >
+        <select id="oviparo_opc" onchange="mamif()">
+            <option value="Elefante">Galinha</option>
+            <option value="Porco">Tartaruga</option>
+            <option value="">Peixe</option>
+        </select>  
+    </div> <br>
+    <img src="" alt="" style="display: none;">
+</body>
+
+</html>
+
+<script>
+
+function first_choice() {
+
+        choice.style.displat = 'none';
+
+
+    
+}
+
+</script>

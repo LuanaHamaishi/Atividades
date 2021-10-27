@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="desafio8.css">
+    <title>Banco KNAB </title>
+</head>
+
+<body>
+
+
+    <div id="pg1">
+        <div class="container">
+            🏦  O melhor banco você só encontra aqui!
+        </div>
+        <div class="corpo">
+            <h1>Bem Vindo(a) ao Banco KNAB</h1>
+            <h2>Simulação de empréstimos e investimentos</h2>
+            <br>
+            <div>Entre com os dados da sua conta:</div> <br>
+            <input type="number" id="conta" placeholder="Conta">
+            <input type="number" id="digito" placeholder="Dígito">
+            <input type="password" id="senha" placeholder="Senha"> <br> <br>
+            <button onclick="but01()">Simular</button>
+        </div>
+
+    </div>
+    <div id="pg2" style="display: none;">
+        <div class="container">
+            🏦 Obrigada pela confiança em usar os nossos serviços!
+        </div>
+        <div class="corpo">
+            <h1>O Banco KNAB é a sua melhor opção</h1> <br>
+            <h2>Empréstimos e Investimentos com as melhores taxas do mercado</h2> <br>
+            <h3>Entre com os dados da sua simulação</h3> <br>
+
+            <div>Valor da operação:<input id="valor" placeholder="Valor" type="text"></div>
+            <br>
+            <select id="operation">
+                <option selected disabled value="">Selecione a Operação</option>
+                <option value="emprestimos">Empréstimos</option>
+                <option value="investimentos">Investimentos</option>
+            </select>
+
+            <select id="deadline">
+                <option selected disabled value="">Selecione o Prazo</option>
+                <option value="curto">Curto</option>
+                <option value="medio">Médio</option>
+                <option value="longo">Longo</option>
+            </select>
+            <br><br>
+            <button onclick="resultado()">Mostrar resultado</button>
+            <br><br>
+            </span>
+            <div id="texto"></div>
+            <br><br>
+            <span style="display: none;" id="last_button">
+                <button onclick="voltar()">Voltar para a simulação</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var simulacao = 0;
+
+    function but01() {
+        var right_password = 0;
+        var right_digit = conta.value % 11;
+
+        if (digito.value == 0 || digito.value == 1 || digito.value == 2 || digito.value == 3) {
+            right_password = 'manaus';
+        }
+        if (digito.value == 4 || digito.value == 5 || digito.value == 6 || digito.value == 7) {
+            right_password = 'recife';
+        }
+        if (digito.value == 8 || digito.value == 9 || digito.value == 10) {
+            right_password = 'fortaleza';
+        }
+
+        if ((conta.value > 0) && (digito.value == right_digit) && (senha.value == right_password)) {
+            pg2.style.display = 'block';
+            pg1.style.display = 'none';
+
+        }
+        else {
+            alert('Dados incorretos!!')
+            digito.value = '';
+            conta.value = '';
+            senha.value = '';
+        }
+    }
+    function resultado() {
+        simulacao++;
+
+        var valor_valor = valor.value
+        var taxa_emprestimo = 0;
+        var taxa_investimento = 0;
+
+
+        last_button.style.display = 'block';
+
+        if (operation.value == 'emprestimos' && deadline.value == 'curto') {
+            taxa_emprestimo = valor_valor * 0.24
+        }
+        else if (operation.value == 'emprestimos' && deadline.value == 'medio') {
+            taxa_emprestimo = valor_valor * 0.16
+        }
+        else if (operation.value == 'emprestimos' && deadline.value == 'longo') {
+            taxa_emprestimo = valor_valor * 0.10
+        }
+        if (operation.value == 'investimentos' && deadline.value == 'curto') {
+            taxa_investimento = valor_valor * 0.05
+        }
+        else if (operation.value == 'investimentos' && deadline.value == 'medio') {
+            taxa_investimento = valor_valor * 0.08
+        }
+        else if (operation.value == 'investimentos' && deadline.value == 'longo') {
+            taxa_investimento = valor_valor * 0.12
+        }
+        if (deadline.value == 'curto' || deadline.value == 'medio') {
+            alert('Esta operação está condicionada ao seu perfil')
+        }
+        if (operation.value == 'emprestimos') {
+            texto.innerHTML += `Simulação ${simulacao} – Para o empréstimo de R$${valor_valor} no ${deadline.value} Prazo será cobrado os juros de R$${taxa_emprestimo} ao ano<br>`
+        }
+        if (operation.value == 'investimentos') {
+            texto.innerHTML += `Simulação ${simulacao} – Investindo R$${valor_valor} no ${deadline.value} prazo o seu rendimento será de R$ ${taxa_investimento} ao ano<br>`
+        }
+    }
+    function voltar() {
+
+        last_button.style.display = 'none';
+        valor.value = '';
+    }
+</script>

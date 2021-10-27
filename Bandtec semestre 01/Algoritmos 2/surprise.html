@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mst()">Aprete para uma surpesa </button> <br>
+    <div id="mostra"></div>
+  
+</body>
+</html>
+
+<script>
+    function mst() {
+        cont = 0;
+
+        while (cont < 3) {
+            mostra.innerHTML += '    <img src="https://lh3.googleusercontent.com/proxy/ZGhJI25bDhxDFaFab4d1N6BaUp7nsu0jxbKoi9bVuW_nWxrM1Y2EQW4VugU2hwnkLM_y_7NvG7REc8oZeoZ0nW7i4aKIvr5crvya_cw4S30YPEujvoV04zVpzQ5cMRW51Km73JMuJs6d" style="height:200px;" >    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK3QEwwGpU91fSxn-_FCfUIYFwDcnhhbyubg&usqp=CAU" style="height:200px;" > <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTr1Pvkz91p5Z3YTBffDVMqaBdl9d8kD4sFA&usqp=CAU" style="height:200px;" > <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPjZYrlvCGKE_ScAecEX7qt0oxU9XnU8yZzQ&usqp=CAU" style="height:200px;" > <br>'
+            cont ++;
+        }
+    }
+</script>

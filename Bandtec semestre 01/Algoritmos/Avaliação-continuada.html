@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>avaliação continuada</title>
+</head>
+
+<body>
+    <img src="https://pm1.narvii.com/6575/0ca06d6af5973c58f99ca212253b779b16d02aeb_hq.jpg" alt="carro hatsune miku"
+        style="height: 150px;"> <br>
+    <h3>Valor do carro</h3> <input type="number" id="carro"> <br>
+    <h3>Quantidade de parcelas</h3> <input type="Number" id="parc_carro"> <br>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZnRzq68hqbBjwp-vuGyahsbBl_Aa7qx4jyw&usqp=CAU"
+        alt="Kawasaki ninja black" style="height: 150px;"><br>
+    <h3>Valor da moto</h3> <input type="number" id="moto"> <br>
+    <h3>Quantidade de parcelas</h3> <input type="number" id="parc_moto"> <br>
+    <button onclick="simulacao()">Simular compra</button>
+    <div id="div_compra"></div>
+
+</body>
+
+</html>
+<script>
+    function simulacao() {
+        var tot_car_moto = Number(carro.value) + Number(moto.value);
+        var car_parc = carro.value * 100 / tot_car_moto;
+        var moto_parc = moto.value * 100 / tot_car_moto;
+       
+
+        div_compra.innerHTML +=
+            ` 
+            <u><b><i>ANÁLISE DAS PRESTAÇÕES</i></b></u> <br>
+        O valor <b>total</b> dos veículos é: <b>R$${tot_car_moto} </b><br>
+
+        O valor do carro representa: <span style= "color: darkcyan;" > ${car_parc}% </span> do valor total de vaículos, e a moto <span style= "color: green;" > ${moto_parc}%</span>
+        <div style="background-color: lightskyblue; height: 30px; width: ${car_parc}% ;"></div><br>
+        <div style="background-color: greenyellow; height: 30px; width: ${moto_parc}% ;"></div>
+
+        O <span style= "background-color: gold;" > carro </span> será pago em: <span style= "color: firebrick;" > ${parc_carro.value} </span> meses com o valor de <span style= "color: firebrick;" >R$${carro.value / parc_carro.value} </span> por mês <br>
+
+        A <span style= "background-color: aqua;" >moto</span> será paga em:<span style= "color: teal;"> ${parc_moto.value}</span> meses, com o valor de:<span style= "color: teal;"> R$${moto.value / parc_moto.value} </span> por mês. <br>
+
+       <i> A soma mensal das parcelas é de:<b> R$${Number(carro.value / parc_carro.value) + Number(moto.value / parc_moto.value)}</b></i> <br>
+       
+        `;
+
+
+
+    }
+
+</script>

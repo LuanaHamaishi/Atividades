@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação continuada</title>
+</head>
+
+<body>
+
+    <!-- Questão única
+A família Lopes resolveu renovar os veículos da casa, será comprado um carro e uma moto, 
+porém a família necessita de um programa em HTML/JS para auxiliar na análise dessa compra.
+Valendo 3 pontos
+a) Tenha, no topo da página, uma imagem de um carro a sua escolha com 150px de altura. Ela 
+deve ser obtida diretamente da internet, ou seja, NÃO pode ser uma imagem local. Sugestão: 
+https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcQpT6PN3aemYsMKrt3o6K3E1x4rjg3LVnUJIQ&usqp=C
+AU
+b) Abaixo da imagem, deve haver dois campos para entrada de dados, um para o valor do 
+carro e outro para a quantidade de parcelas mensais que será pago o carro.
+c) Abaixo do item b) tenha uma imagem de uma moto a sua escolha com 150px de altura. Ela 
+deve ser obtida diretamente da internet, ou seja, NÃO pode ser uma imagem local. Sugestão:
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIrfs2nLFu0g7E0uBaN5wfConsKuaw_E_g&usqp=CAU
+d) Abaixo da imagem da moto, deve haver dois campos para entrada de dados, um para o 
+valor da moto e outro para a quantidade de parcelas mensais que será paga a moto.
+Valendo 4 pontos
+e) Abaixo do item d) tenha um botão “Simular a Compra”, que quando clicado deve mostrar na 
+página as mensagens abaixo:
+ANÁLISE DOS VALORES DE COMPRA
+O valor total dos veículos é R$ xxxxxxx,xx
+O carro representa XX,X% do valor total dos veículo e a moto YY,Y%
+#ficaadica1 – o valor total dos veículos e a soma do valor do carro com a moto
+#ficaadica 2 - para encontrar a proporção de um valor em relação a outro faça o seguinte: 
+divida o valor desejado pela soma dos valores e multiplique por 100 para essa proporção ser 
+um percentual, ou seja, 𝑣𝑎𝑙𝑜𝑟1
+(𝑣𝑎𝑙𝑜𝑟1+𝑣𝑎𝑙𝑜𝑟2)
+∗ 100
+f) Abaixo dos textos do item e) deve haver também o seguinte texto:
+ANÁLISE DAS PRESTAÇÕES
+O carro será pago em XX meses e cada parcela será de R$ 99999,99
+A moto será paga em XX meses e cada parcela será de R$ 99999,99
+A soma da parcela mensal do carro e da moto é de R$ 99999,99
+#ficaadica – para encontrar o valor da parcela divida o valor do veículo pela quantidade de 
+parcelas
+Valendo 1 ponto
+g) Abaixo dos textos do item f), emitir uma barra com 30px de altura, na cor azul, com largura 
+correspondente a proporção do valor do carro em relação ao valor total dos veículos. Abaixo
+dessa barra, emitir uma barra com 30 px de altura, na cor verde, com largura correspondente a 
+proporção do valor da moto em relação ao valor total dos veículos.
+Valendo 1 ponto
+Os itens e) e f), devem apresentar formatação semelhante ao texto exposto, ou seja, usar 
+negrito, itálico, cor da fonte, cor de fundo etc. 
+Valendo 1 ponto
+Busque na internet uma imagem que represente cálculos e emita na página, logo após a 
+“Análise das Prestações”, com 150px de largura. Tem que ser uma imagem ON-LINE, NÃO
+pode ser uma imagem local.
+- Todos os ids, variáveis e funções devem ter bons nomes
+- O código deve estar bem formatado -->
+    <img src="https://pm1.narvii.com/6575/0ca06d6af5973c58f99ca212253b779b16d02aeb_hq.jpg" alt="carro hatsune miku"
+        style="height: 150px;"> <br>
+    <h3>Por favor, insira o valor do carro: </h3> <input type="number" id="val_car"><br>
+    <h3>Por favor, insira a quantidade de parcelas: </h3> <input type="number" id="val_parc_car"><br><br>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZnRzq68hqbBjwp-vuGyahsbBl_Aa7qx4jyw&usqp=CAU"
+        alt="Kawasaki ninja black" style="height: 150px;"><br>
+        <h3>Insira o valor da moto: </h3> <input type="number" id="val_mot"><br>
+        <h3>Insira o valor da parcela: </h3> <input type="number" id="val_parc_mot"><br><br>
+        <button onclick="simcomp()">Simular compra</button>
+        <div id="div_sim"></div>
+
+
+</body>
+
+</html>
+
+<script>
+function simcom() {
+    var carro = val_car.value;
+    var parc_car= val_parc_car.value;
+    var moto = val_mot.value;
+    var parc_mot = val_parc_moto.value;
+    var val_tot = Number(val_car.value) + Number(val_mot.value)
+
+    div_sim.innerHTML += `
+    <h3>O valor total dos automóveis ficou em: </h3> ${val_tot}<br>
+
+    `
+    //ANÁLISE DOS VALORES DE COMPRA
+    //O valor total dos veículos é R$ xxxxxxx,xx
+    //O carro representa XX,X% do valor total dos veículo e a moto YY,Y%
+    //#ficaadica1 – o valor total dos veículos e a soma do valor do carro com a moto
+//#ficaadica 2 - para encontrar a proporção de um valor em relação a outro faça o seguinte: 
+//divida o valor desejado pela soma dos valores e multiplique por 100 para essa proporção ser 
+//um percentual, ou seja, 𝑣𝑎𝑙𝑜𝑟1
+//(𝑣𝑎𝑙𝑜𝑟1+𝑣𝑎𝑙𝑜𝑟2)
+//∗ 100
+}
+
+
+</script>

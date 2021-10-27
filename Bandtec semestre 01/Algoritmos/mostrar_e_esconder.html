@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar e esconder</title>
+</head>
+
+<body>
+
+    <h3>Esconde e mostra elementos</h3>
+    <!-- display; none; torna um elemento invisível
+display; block; torna um elemento visível
+ -->
+
+    <span style="font-size: 20px;">Há segredos aqui! Cuidado!</span> <br><br>
+
+    <button onclick="mostrar_segredo()">Ver segredos</button> </button>
+
+    <button onclick="esconder_segredo()">Esconder segredos</button>
+
+    <br><br>
+
+    <span id="span_segredo" style="display: none;">Você é senhor do que cala e escravo do que cala</span>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function mostrar_segredo() {
+
+        span_segredo.style.display = 'block';
+
+    }
+
+    function esconder_segredo() {
+
+        span_segredo.style.display = 'none';
+
+    }
+
+</script>

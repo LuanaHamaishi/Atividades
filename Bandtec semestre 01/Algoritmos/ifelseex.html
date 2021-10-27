@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. Criar um programa em HTML/JS que auxilie uma Autoescola a identificar possíveis novos alunos.
+
+a) Solicite o nome e a idade de uma pessoa;
+b) Ao clicar no botão "Avaliar aluno", se a pessoa tiver 18 anos ou mais emita a mensagem "Xxxxxx vamos tirar a CNH?", caso contrário emita a mensagem "Xxxxxx vai jogar PlayStation!"; -->
+    <h3>Por favor insira seu nome</h3>
+    <input type="text" id="nome_pessoa"> <br>
+    <h3>Por favor insira sua idade</h3>
+    <input type="number" id="idade_pessoa"> <br>
+    <button onclick="avaliar()">Avaliar</button> <br>
+    <span id="imprime"></span>
+</body>
+
+</html>
+
+<script>
+    function avaliar() {
+        if (idade_pessoa.value <= 17) {
+            imprime.innerHTML = `${nome_pessoa.value} vai jogar videogame`;
+        } else {
+            imprime.innerHTML = `${nome_pessoa.value} vamos tirar a CNH??`
+        }
+    }
+</script>

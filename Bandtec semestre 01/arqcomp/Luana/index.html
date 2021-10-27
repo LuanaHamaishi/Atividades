@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luana's Machine</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="sortcut icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+
+<body id="bodynho" background="imagebk.jpg">
+
+    <center>
+        <h1>Luana's Machine</h1>
+
+        <br><br>
+
+        <h3 >Decimal</h3>
+        <input id="decim" type="text" placeholder="Digite o valor decimal">
+
+        <br><br>
+
+        <h3>Converter para:</h3>
+
+
+        <input onclick="show_oct()" type="checkbox"><b>Octal</b>
+        <br>
+        <div id="oct"></div>
+
+        <br><br>
+
+        <input onclick="show_hexa()" type="checkbox"><b>Hexadecimal</b>
+        <br>
+        <div  id="hexx"></div>
+
+        <br><br>
+
+        <input onclick="show_bin()" type="checkbox"><b>Binário</b>
+        <br>
+        <div id="bin"></div>
+
+        <br><br>
+
+        <button onclick="converter()"><img src="button.png" alt="botão" ></button>
+    </center>
+
+    <audio controls>
+        <source src="cry_baby.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+
+</body>
+
+</html>
+
+
+
+<script>
+
+    function converter() {
+
+        var decimal = Number(decim.value);
+
+        let octal = decimal.toString(8);
+
+        let hexadecimal = decimal.toString(16);
+
+        let binaria = decimal.toString(2);
+
+        console.log(decimal);
+        console.log(octal);
+        console.log(hexadecimal);
+        console.log(binaria);
+
+        document.getElementById("decim").innerHTML = ` ${decimal}`;
+        document.getElementById("oct").innerHTML = ` ${octal}`;
+        document.getElementById("hexx").innerHTML = ` ${hexadecimal}`;
+        document.getElementById("bin").innerHTML = ` ${binaria}`;
+
+
+    }
+
+    function show_bin() {
+        bin.style.display = 'block'
+    }
+
+    function show_hexa() {
+        hexx.style.display = 'block'
+    }
+
+    function show_oct() {
+        oct.style.display = 'block'
+    }
+</script>
+</body>
+
+</html>

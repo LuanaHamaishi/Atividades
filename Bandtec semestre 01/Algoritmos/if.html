@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Pontos na CNH</h2>
+    <input type="number" id="pontos">
+    <button onclick="validar()">Validar</button> <br>
+    <span id="imprime"></span>
+
+
+</body>
+
+</html>
+
+<script>
+    function validar() {
+        var ax_multa = 0;
+        if (pontos.value >= 20) {
+            alert ('Carteira suspensa');
+            ax_multa = pontos.value * 87;
+        } else {
+            ax_multa = pontos.value * 78
+        }
+
+        imprime.innerHTML = `O valor total da(s) multa(s) é de: R$${ax_multa}`
+  
+  
+  
+  
+        /*      var tot_multa = pontos.value * 78;
+        var tot_plus_multa = pontos.value * 87;
+        if (pontos.value >= 20) {
+            alert('Você está com a CNH suspensa');
+            imprime.innerHTML = `O valor total das suas multas é de: R$${tot_plus_multa}`;
+        }
+        if (pontos.value < 20) {
+            imprime.innerHTML = `O valor total das suas multas é de: R$${tot_multa}`
+        } */
+    }
+</script>

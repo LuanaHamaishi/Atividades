@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+
+<body>
+    <!-- 4. Crie um programa em HTML/JS que verifique se o usuário é vegano ou não.
+
+a) Numa combo pergunte o que ele come no café da manhã, tendo as opções
+    ovos
+    leite de arroz
+    bacon
+
+b) Numa outra combo pergunte o que ele come no almoço, tendo as opções
+    bife
+    hamburger de soja
+    frango grelhado
+
+c) Numa outra combo pergunte o que ele come na janta, tendo as opções
+
+    picanha de soja
+    cupim
+    coração
+
+d) Ao clicar no botão "Sou vegano", aparece um alert com uma dessas frases:
+    "Sim, você é vegano!", caso ele consuma leite de arroz no café, hamburger de soja no almoço e picanha de soja na janta
+
+    "Não, você não é vegano", caso contrário
+
+ 
+
+  -->
+
+    <h3>O que você come no Café da manhã?/</h3>
+    <select id="café">
+        <option value="select1">--Selecione uma opção--</option>
+        <option value="ovos">Ovos</option>
+        <option value="leite">Leite de arroz</option>
+        <option value="bacon">Bacon</option>
+    </select>
+    <h3>O que você come no almoço??</h3>
+    <select id="almoço">
+        <option value="select2">--Selecione uma opção--</option>
+        <option value="bife">Bife</option>
+        <option value="hamburger">Hamburger de soja</option>
+        <option value="frango">Frango grelhado</option>
+    </select>
+    <h3>O que você come no jantar??</h3>
+    <select id="jantar">
+        <option value="select3">--Selecione uma opção--</option>
+        <option value="picanha">Picanha de soja</option>
+        <option value="cupim">Cupim</option>
+        <option value="coração">Coração</option>
+    </select> <br><br>
+
+    <button onclick="verificar()">Verificar-----</button>
+
+
+</body>
+
+</html>
+
+<script>
+    function verificar() {
+        if (café.value == 'leite' && almoço.value == 'hamburger' && jantar.value =='picanha') {
+            alert ('Você é vegano(a)')
+        } else if (café.value == 'select1' && almoço.value == 'select2' && jantar.value == 'select3' ) {
+            alert ('selecione alguma opção')
+        }else {
+            alert('Você não é vegano(a)')
+        }
+    }
+</script>

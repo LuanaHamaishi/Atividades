@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+</head>
+<body style="background-color: rgb(167, 167, 167);">
+    <!--
+
+        Tag Input cria um campo para entrada de dados
+        Vamos usar SEMPRE o type="text"
+        Vamos SEMPRE usar o atributo id
+
+        O atributo placeholder cria um texto temporário dentro do prpoprio campo
+        O campo auto focus terá o cursor nele quando a página for carregada
+
+
+
+     -->
+
+     Entre com o seu <b>primeiro nome</b>
+     <input id="primeiro" type="text" placeholder="primeiro nome">
+     <br>
+     Entre com o seu <b>último nome</b>
+     <input id="ultimo" type="text" placeholder="último nome">
+     <br>
+     <button onclick="incluir()" style="background-color: black; color: aquamarine;"> Incluir </button>
+     <br>
+     <div id="div_mens" style="background-color: rgb(50, 224, 230); height: fit-content;">
+         <h3>Mini cadastro de nome</h3>
+         Seu nome é: <br>
+     </div>
+     
+    
+</body>
+</html>
+
+<script>
+
+function incluir() {
+
+    div_mens.innerHTML += "Seu nome é: " + primeiro.value + ' ' +"<b>"+ ultimo.value + "</b><br>"  ; 
+    primeiro.value = ' ';
+    ultimo.value = ' ';
+    alert ("Seu nome foi inserido, obrigada!");       
+}
+
+</script>

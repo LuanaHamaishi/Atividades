@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 02 ex 1</title>
+</head>
+
+<body>
+    <h2>Exercício 01</h2>
+    <span style="font-size: 20px;">Insira sua cidade natal:</span> <input id="primeiro" type="text"
+        placeholder="Cidade Natal"> <br>
+    <span style="font-size: 20px;">Insira sua data de nascimento:</span> <input id="segundo" type="date"
+        placeholder="Data de nascimento"> <br>
+    <button onclick="cadastro() " style="background-color: black; color: aqua;">Cadastrar</button> <br>
+
+    <div id="div_cad"></div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    function cadastro() {
+
+        // alert("Você nasceu em: " + primeiro.value + ' na data de: ' + segundo.value);
+        div_cad.innerHTML +=("<b>Você nasceu em: </b>" + primeiro.value + ' <i>na data de: </i>' + segundo.value);
+        primeiro.value = ' ';
+        segundo.value = ' ';
+
+
+    }
+
+
+</script>

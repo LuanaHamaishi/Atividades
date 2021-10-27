@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+
+<body style="background-color: palevioletred;">
+
+
+
+    <!-- Crie um programa que:
+    a) Tenha três campos de entrada (nome do produto, quantidade e valor unitário) e uma imagem de carrinho de compras clicável
+    b) Ao clicar no carrinho, os elementos do item 'a' devem sumir e surgir o seguinte:
+     * Texto na página: "O orçamento da quantidade xx do produto yy é de R$000,00", esta mensagem não pode apagar as mensagens anteriores (se existirem)
+     * Botão "Comprar mais" que esconde os elementos do item 'b' e exibe novamente os elementos do item 'a'.
+     * Botão “Finalizar” que emite o alerta abaixo, limpa todas as áreas e variáveis (como se estivesse iniciando novamente o programa.
+
+o   Alerta: “A quantidade de itens orçados foi de 999 e a soma desses orçamentos foi de R$ 99999999,99”-->
+
+    <div style="background-color: rgb(26, 213, 238); height: 50px; width: max-width ; ">
+        <h3>Vamos ás compras 🛍️🤑🛒</h3>
+    </div>
+    <div id="div_2">
+        <span id="sp_zero" style="font-size: 20px;">Qual produto você deseja??</span> <input type="text" id="produto"
+            placeholder="Produto">
+        <br>
+        <span id="sp_um" style="font-size: 20px;">Qual a quantidade desejada??</span> <input type="number" id="qtd"
+            placeholder="Quantidade">
+        <br>
+        <span id="sp_dois" style="font-size: 20px;">Qual o valor do produto??</span> <input type="number" id="valor"
+            placeholder="Valor">
+        <br>
+        <button id="bt_carrinho" onclick="carrinho()"> <img
+                src="https://images.vexels.com/media/users/3/200098/isolated/lists/7ad7c76da9a0cd7d2b01b64b2590617b-icone-do-carrinho-de-compras-icone-do-carrinho-de-compras.png"
+                alt="carrinho de compras" style="height: 50px; float: left; width: 50px;"></button> <br>
+    </div>
+    <div id="div_3" style="display: none;"> <button id="bt_mais" onclick="comp_mais()" >Comprar mais</button><br>
+        <button id="bt_finalizar" onclick="final()" >Finalizar</button><br>
+        <br>
+    </div>
+    <div id="div_compras" style="display: block;"></div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    var glob_ax = (produto.value + qtd.value + valor.value);
+
+    function carrinho() {
+
+        glob_ax++;
+        // Fazendo os botões que estavam escondidos aparecerem
+        div_3.style.display = 'block'
+        // Fazendo o conteúdo já existente sumir
+        div_2.style.display = 'none';
+        var ax_valor_tot = valor.value * qtd.value;
+        div_compras.innerHTML += ` <h3>O orçamento da quantidade ${qtd.value} do produto ${produto.value} é de R$${ax_valor_tot.toFixed(2)} </h3> `;
+
+
+
+    }
+
+    function comp_mais() {
+        glob_ax++;
+         div_2.style.display = 'block';
+         div_3.style.display = 'none';
+         valor.value = '';
+         produto.value = '';
+         qtd.value = '' ; 
+
+
+
+
+    }
+
+    function final() {
+        var tot_final = glob_ax.value * valor.value;
+        div_3.style.display = 'none'
+        div_2.style.display = 'none'
+        alert (`A quantidade de itens orçados foi de ${qtd.value} e a soma desses orçamentos foi de R$${tot_final.value}`); 
+
+
+    }
+
+
+
+</script>

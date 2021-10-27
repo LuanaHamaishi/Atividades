@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 11. Crie um programa em HTML/JS o qual:
+
+a) Solicite a idade e o salário do usuário
+
+b) Ao clicar em "Analisar situação", deve aparecer uma dessas frases abaixo do botão...
+
+c) Menor de idade e liso, caso a idade seja menor que 18 e o salário for menor que 2500.
+
+d) Menor de idade e ostentação, caso a idade seja menor que 18 e o salário for a partir de 2500.
+
+e) Maior de idade e liso, caso a idade for a partir de 18 e o salário for menor que 3500.
+
+f) Maior de idade e ostentação, caso a idade for a partir de 18 e o salário for a partir de 3500 até 7000.
+
+g) Maior de idade e mega ostentação, caso a idade for a partir de 18 e o salário for maior que 7000.
+
+  -->
+
+  <h2>Por favor insira a sua idade</h2> <input id="idade"> <br>
+  <h2>Por favor insira seu salário</h2> <input id="salario"> <br>
+  <button onclick="analise()">Analisar</button>
+
+</body>
+</html>
+
+<script>
+    function analise() {
+        if (idade.value < 18 && salario.value <2500) {
+            alert('Menor de idade e liso hein')
+        } else if (idade.value < 18 && salario.value >= 2500) {
+            alert('Menor de idade e ostentação ')
+            
+        } else if (idade.value >= 18 && salario.value < 3500) {
+            alert ('maior de idade e liso')          
+        } else if (idade.value >= 18 && salario.value >= 3500 && salario.value < 7000) {
+            alert('maior de idade e ostentação')
+        } else{
+            alert('maior de idade e MEGA ostentação')
+
+        }
+    }
+</script>

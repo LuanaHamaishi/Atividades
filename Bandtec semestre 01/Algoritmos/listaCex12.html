@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+
+<body>
+
+    <!--
+ 
+
+12. Melhore o programa da questão anterior de tal forma que:
+
+a) Abaixo da frase do valor guardado tenha as seguintes frases:
+
+    Quantidade de depósitos feitos: 0
+
+    Quantidade de retiradas feitas: 0
+
+b) Sempre que for clicado no botão "Depositar", o valor de "depósitos feitos" aumenta em 1
+
+c) Sempre que for clicado no botão "Tirar toda a grana", o valor de "retiradas feitas" aumenta em 1 -->
+
+
+    <P>
+        Valor guardado no cofrinho R$<b id="valor">0,00</b>
+    </P> <br>
+
+    <p>
+        Quantidade de depósitos feitos: <b id="qtd_dep">0</b>
+    </p> <br>
+
+    <p>
+        Quantidade de retiradas feitas: <b id="qtd_ret">0</b>
+    </p> <br>
+
+    <input type="number" id="valor_dep" placeholder="Valor do depósito"> <br> <br>
+
+    <button style="background-color: black; color: red;" onclick="depositar()">
+        <b>Depositar</b>
+    </button> <br>
+    <button style="background-color: red; color: black;" onclick="retirar()">
+        <b>Retirar toda grana </b>
+    </button> <br>
+    <div id="div_cofre"></div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    var total = 0.00;
+    var retirada = 0;
+    var deposito = 0;
+
+    function depositar() {
+        total = Number(total) + Number(valor_dep.value);
+        valor.innerHTML = total;
+        deposito++;
+        qtd_dep.innerHTML = deposito;
+
+    }
+
+    function retirar() {
+        total = 0.00;
+        valor.innerHTML = total;
+        retirada++;
+        qtd_ret.innerHTML = retirada;
+    }
+</script>

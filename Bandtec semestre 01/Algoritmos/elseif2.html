@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body background="calculadorabk.jpg">
+    <!-- 2. Crie um programa que exibe a classe social de uma pessoa que 
+        
+        mora em Tuvalu (um dos menores países do mundo) conforme a renda familiar mensal.
+
+a) Solicite a renda familiar mensal
+
+b) Conforme digita, deve aparecer abaixo uma dessas frases: 
+
+   "Classe E" (até 250)
+
+   "Classe D" (+250 até 900)
+
+   "Classe C" (+900 até 2500)
+
+   "Classe B" (+2500 até 9500)
+
+   "Classe A" (+9500) -->
+
+<h2 style="background-color: blanchedalmond; color: cornflowerblue;">  Informe sua renda mensal </h2><input id="renda_fam">
+   <br>
+
+   <button onclick="verify()">Verificar categoria</button>
+
+
+</body>
+</html>
+
+<script>
+
+function verify() {
+    var ax_renda = renda_fam.value;
+    if (ax_renda > 9500) {
+        alert ("Você está na classe A");
+    } else if (ax_renda <= 250) {
+        alert ("Você está na classe E");
+    } else  if (ax_renda < 900) {  
+        alert ("Você está na classe D");        
+    } else if (ax_renda < 2500) {
+        alert ("Você está na classe C");
+    } else if ( ax_renda <= 9500) {
+        alert ("Você está na classe B");
+    }
+}
+
+</script>

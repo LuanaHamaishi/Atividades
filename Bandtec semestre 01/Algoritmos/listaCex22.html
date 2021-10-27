@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: grey; color: rgb(121, 4, 4);">
+
+  <img src="Entregas.png" alt="" style="border-radius: 50%; height: 50px;">
+    <div id="div_zonas" style="display: block;">
+        <span>Entrega para a ZS: </span><input type="text" id="zs" placeholder="Zona sul" style="background-color: rgb(94, 0, 0);"> <br> <br>
+        <span>Entrega para a ZN: </span><input type="text" id="zn" placeholder="Zona Norte" style="background-color: rgb(102, 0, 0);"> <br> <br>
+        <span>Entrega para a ZL: </span><input type="text" id="zl" placeholder="Zona Leste" style="background-color: rgb(104, 0, 0);"> <br> <br>
+        <span>Entrega para a ZO: </span><input type="text" id="zo" placeholder="Zona Oeste" style="background-color: rgb(92, 0, 0); "> <br> <br>
+        <button onclick="agenda()" style="background-color:crimson;">Carregar Agenda</button>
+    </div>
+
+    <div id="div_entrega" style="display: none;">
+        <button onclick="zonasul()" style="background-color: chocolate;">Entregar Zona Sul</button>
+        <button onclick="zonanorte()" style="background-color: chocolate;">Entregar Zona Norte</button>
+        <button onclick="zonaleste()" style="background-color: chocolate;">Entregar Zona Leste</button>
+        <button onclick="zonaoeste()" style="background-color: chocolate;">Entregar Zona Oeste</button>
+    </div>
+
+    <div id="div_entregas"></div>
+
+
+
+</body>
+
+</html>
+<script>
+    var ent_zs = Number(0);
+    var ent_zn = Number(0);
+    var ent_zl = Number(0);
+    var ent_zo = Number(0);
+    var ent_rest = Number(0);
+
+
+    function agenda() {
+        ent_zs = Number(zs.value);
+        ent_zn = Number(zn.value);
+        ent_zl = Number(zl.value);
+        ent_zo = Number(zo.value);
+        ent_rest = ent_zs + ent_zn + ent_zl + ent_zo;
+
+        div_zonas.style.display = 'none';
+        div_entregas.innerHTML = `
+        Entregas Zona Sul: ${ent_zs} <br>
+        Entregas Zona Norte: ${ent_zn} <br>
+        Entregas Zona Leste: ${ent_zl} <br>
+        Entregas Zona Oeste: ${ent_zo} <br>
+        Entregas restantes: ${ent_rest} `;
+
+        div_entrega.style.display = 'block'
+
+
+    }
+    function zonasul() {
+        ent_zs--;
+        ent_rest--;
+        div_entregas.innerHTML = `
+        Entregas Zona Sul: ${ent_zs} <br>
+        Entregas Zona Norte: ${ent_zn} <br>
+        Entregas Zona Leste: ${ent_zl} <br>
+        Entregas Zona Oeste: ${ent_zo} <br>
+        Entregas restantes: ${ent_rest} `;
+        div_entrega.style.display = 'block'
+
+    }
+    function zonanorte() {
+        ent_zn--;
+        ent_rest--;
+        div_entregas.innerHTML = `
+        Entregas Zona Sul: ${ent_zs} <br>
+        Entregas Zona Norte: ${ent_zn} <br>
+        Entregas Zona Leste: ${ent_zl} <br>
+        Entregas Zona Oeste: ${ent_zo} <br>
+        Entregas restantes: ${ent_rest} `;
+        div_entrega.style.display = 'block'
+
+    }
+    function zonaleste(params) {
+        ent_zl--;
+        ent_rest--;
+        div_entregas.innerHTML = `
+        Entregas Zona Sul: ${ent_zs} <br>
+        Entregas Zona Norte: ${ent_zn} <br>
+        Entregas Zona Leste: ${ent_zl} <br>
+        Entregas Zona Oeste: ${ent_zo} <br>
+        Entregas restantes: ${ent_rest} `;
+        div_entrega.style.display = 'block'
+
+    }
+    function zonaoeste() {
+        ent_zo--;
+        ent_rest--;
+        div_entregas.innerHTML = `
+        Entregas Zona Sul: ${ent_zs} <br>
+        Entregas Zona Norte: ${ent_zn} <br>
+        Entregas Zona Leste: ${ent_zl} <br>
+        Entregas Zona Oeste: ${ent_zo} <br>
+        Entregas restantes: ${ent_rest} `;
+        div_entrega.style.display = 'block'
+
+    }
+
+</script>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 lista f</title>
+</head>
+<body>
+
+    <!-- 1. Crie um programa em HTML/JS o qual:
+
+a) Pergunte a temperatura atual
+
+b) Ao clicar em "Ver situação"...
+
+c) Caso a temperatura seja entre 21 e 24, exibir um alert com a frase "Temperatura confortável sorriso"
+
+d) Caso a temperatura não estiver no intervalo definido em c), exibir um alert com a frase "Temperatura DESCONFORTÁVEL triste" -->
+    <h3>Insira a temperatura</h3> <input type="Number" id="temperatura_atual" placeholder="Temperatura"> <br> <br>
+    <button style="border-radius: 10px; margin-left: 40px;" onclick="situação()">Ver situação</button> <br>
+    <div id="div_texto"></div>
+</body>
+</html>
+
+<script>
+    function situação() {
+        
+        if (temperatura_atual.value >= 21 && temperatura_atual.value <= 24){
+            alert ('A temperatura está confortável  ')
+        } else {
+            alert ('A temperatura está desconfortável :/')
+        }
+    }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1 Random</title>
+</head>
+<body>
+    <h1>Sorteio de números</h1>
+    <button onclick="sorteio()" style="border-radius: 50px;background-color: darkred; color: honeydew;">SORTEAR</button>
+    <div id="texto"></div> <br>
+</body>
+</html>
+
+<script>
+    function sorteio() {
+        var aleatorio = Math.random()
+        if (aleatorio < 0.5 ) {
+            texto.innerHTML += `O número ${aleatorio} foi sorteado, e ele é arredondado para ${(aleatorio).toFixed()} <br>`
+        } else {
+            texto.innerHTML += `O número ${aleatorio} foi sorteado, e ele é arredondado para ${(aleatorio).toFixed()} <br>`
+        }
+    }
+</script>

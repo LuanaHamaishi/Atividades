@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista H 3</title>
+</head>
+<body>
+   <h1>Lista H</h1>
+   <input type="text"  id="texto"> <br>
+   <button onclick="mostrar()">Mostrar</button>
+   <div id="txt"></div>
+</body>
+</html>
+ <script>
+
+    function mostrar(){
+        var frase = texto.value;
+        var contador = 0;
+        txt.innerHTML='';
+        while (contador <= 18) {
+            txt.innerHTML += `Sua frase é: ${frase} <br>`;
+            contador++;
+        }
+    }
+
+</script> 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humor</title>
+</head>
+
+<body>
+
+<h1>Seleção de humor</h1>
+<select id="Humor" onchange="oq()">
+    <option value="Ah como a vida é bela">Feliz</option>
+    <option value="HM ta bom então">Normal</option>
+    <option value="Vai se ferrar">Pra baixo</option>
+    <option value="Caramba!!! Eu sou incrível">Muito Feliz</option>
+</select>
+<!-- <button onclick= "oq()">O que será?</button> -->
+
+
+</body>
+
+</html>
+
+<script>
+    function oq() {
+        alert("Você vai falar: " + Humor.value)
+        
+    }
+</script>

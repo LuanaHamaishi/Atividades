@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 14. Crie um programa em HTML/JS o qual:
+
+a) Solicite 2 notas de um aluno
+
+b) Ao clicar em "Verificar situação", calcule sua média e...
+
+c) Caso a média seja a partir de 6, exiba um alert com "Parabéns, aprovado!"
+
+d) Caso a média seja menor que 6, exiba um alert com "Tente outra vez..." -->
+
+<h3>Coloque sua primeira nota</h3> 
+<input type="number" id="nota1"> <br>
+<h3>Coloque sua segunda nota</h3>
+<input type="number" id="nota2"> <br>
+<button onclick="notas()">Calcular média</button> <br>
+<div id="div_resultado"></div>
+
+</body>
+</html>
+<script>
+    var media_final = 0
+    function notas() {
+        media_final = (Number(nota1.value) + Number(nota2.value)) / 2;
+        if (media_final >= 6) {
+            alert ('Parabéns, você foi aprovado (a)');
+        } else {
+            alert ('Você foi reprovado (a)');
+        }
+        div_resultado.innerHTML = `Sua média final foi de ${media_final}`;
+    }
+</script>

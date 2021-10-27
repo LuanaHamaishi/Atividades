@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+</head>
+<body>
+   
+    
+<h1>A história de uma pizza</h1>
+<button onclick="chegou()">Acabou de chegar</button>
+<button onclick="depois()">Depois de 1 minuto</button>
+<button onclick="depois5()">Depois de 5 minutos</button>
+<button onclick="depois15()">Depois de 15 minutos</button>
+
+<div id="div_pizza"></div>
+
+
+
+
+
+</body>
+</html>
+
+<script>
+
+function chegou() {
+    div_pizza.innerHTML = '<img src="pizza-01" alt""> <br> ';
+    
+}
+
+function depois() {
+    div_pizza.innerHTML = '<img src= "pizza02" alt""> <br>';
+    
+}
+
+function depois5() {
+    div_pizza.innerHTML = '<img src="metade" alt""> <br>';
+    
+}
+
+function depois15() {
+    div_pizza.innerHTML = '<img src="prato.jpg" style= "height: 390px"> <br>';
+    
+}
+
+
+</script>

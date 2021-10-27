@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>você incomoda muita gente!</h2>
+  <br>
+  <input type="number"  placeholder="quantos elefantes??" id="elef">
+  <button onclick="bt()">Mostrar</button> <br>
+  <div id="txt"></div>
+</body>
+</html>
+
+<script>
+    function bt() {
+        var cont =1;
+        var qtd = elef.value;
+        txt.innerHTML = '';
+        while (cont <= qtd) {
+            if (cont == 1) {
+                txt.innerHTML += `${cont} elefante incomoda muita gente <br><br>`;
+            }
+            else if (cont % 2 == 1){
+                txt.innerHTML += `${cont} elefante(s) incomoda(m) muita gente <br><br>`;
+            } else{
+                txt.innerHTML += `${cont} elefante incomodam incomodam muito mais <br><br>`
+            }
+            cont++;
+
+        }
+    }
+</script>

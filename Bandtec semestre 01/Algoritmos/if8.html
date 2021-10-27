@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 8. Na cidade Paulopolis a luz custa R$ 0,85 por kWh. Criar um programa em HTML/JS que:
+a) Solicite a quantidade de kWh consumida no mês
+b) Ao clicar em "calcular conta de luz", calcule o valor da conta no mês
+c) Dê um desconto de 10% somente se a quantidade for menor que 100 kWh
+d) Exiba um alerta com o valor da conta a ser paga
+
+OBS. Faça o teste de mesa para este exercício. -->
+
+Por favor, insira a quantidade de kWh que você consome por mês <input type="number"  id="qtd_kwh">
+<button onclick="total()">Calcular a sua conta de luz</button> <br>
+<span id="resultado"></span>
+</body>
+</html>
+
+<script>
+    function total() {
+        var tot_valor = qtd_kwh.value * 0.85;
+        var desc_tot = tot_valor * 0.1;
+
+        if (tot_valor <= 100){
+            resultado.innerHTML = `Você recebeu um desconto de 10%, o seu valor final ficou em R$${tot_valor - desc_tot}`
+        }
+        if (tot_valor > 100){
+            resultado.innerHTML = `Sua conta ficará em: R$${tot_valor}` 
+        }
+        
+    }
+</script>

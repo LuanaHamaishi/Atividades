@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 6. Crie um programa em HTML/JS o qual:
+
+a) Solicita a temperatura do ambiente
+
+b) Ao clicar em "Verificar clima", determine se o clima está:
+
+    Apropriada p/ conservar alimento - Caso a temperatura for menor que 10
+    Inapropriada p/ conservar alimento - Caso a temperatura for a partir de 10
+
+c) Em caso de temperatura apropriada, exiba a figura de um alimento em bom estado. Caso contrário, exiba a imagem de um alimento estragado
+
+  -->
+
+  <h3>insira a temperatura do ambiente</h3> <input id="temp"> <br>
+  <button onclick="verify()">Verificar clima</button>
+  
+  </div> 
+  <img id="imagem" style="display: none; height: 200px;" src="" alt="">
+</body>
+</html>
+
+<script>
+     var ax_temp = temp.value; 
+  function verify() {
+      if (ax_temp > 10) {
+          alert ("dinossauro podre")
+          imagem.style.display = 'block'
+          imagem.src = 'https://p2.trrsf.com/image/fget/cf/648/0/images.terra.com/2019/03/15/106033594439c3237-e06e-4779-abfb-7759df744912.jpg'
+    
+        } else {
+            alert ("Dinossauro bom!")
+            imagem.style.display = 'block'
+                imagem.src = 'https://diaonline.ig.com.br/wp-content/uploads/2020/07/comida-caseira-brasilia_2.jpg'
+    }
+}
+</script>

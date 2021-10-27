@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação 2</title>
+</head>
+<body>
+    <h1>SDA as melhores camisetas do Brasil</h1>
+    <h3>Quantidade</h3> <input type="number"  id="quantidade"> <br>
+
+    <h3>Tamanho</h3> <select  id="tamanho">
+        <option selected="" disabled="" value="">-Selecione uma opção-</option>
+        <option value="pequeno">Pequeno</option>
+        <option value="grande">Grande</option>
+    </select> <br> <div id="div_tamanho"></div>
+    <br>
+    <h3>Tipo</h3> <select  id="tipo">
+        <option selected="" disabled="" value="">-Selecione uma opção-</option>
+        <option  value="branca">Branca</option>
+        <option value="colorida">Colorida</option>
+    </select>
+    <br>
+    <div id="div_cor"></div>
+    <br>
+    <h3>Distancia</h3> <input type="number" id="distancia">
+    <br>
+    <div id="div_distancia"></div>
+    <br>
+    <button onclick="bt_1()" id="botao1">Orçar</button>
+    <div id="pg2" style="display: none;">
+    OPOPOPOPOPOPO
+    </div>
+</body>
+</html>
+
+
+<script>
+
+function bt_1() {
+
+    if (quantidade.value <100 ) {
+        alert ('Só vendemos por atacado!')
+    }
+    if (quantidade.value >2000) {
+        alert('Consulte nosso PCP (planejamento e controle da produção)')
+    }
+
+    if (distancia.value <= 0 || distancia.value == "") {
+        div_distancia.innerHTML = '<b style="color:crimson;">Insira uma distancia válida</b>'
+    }
+
+    if (tamanho.value == "") {
+        div_tamanho.innerHTML ='<b style="color:crimson;">Insira um tamanho</b>'
+    }
+
+    if (tipo.value == "") {
+        div_cor.innerHTML = '<b style="color:crimson;">Insira uma cor</b>'
+    }
+    if ((distancia.value >0) && (quantidade.value >= 100 || quantidade.value <2000) && (tamanho.value == "pequeno"||tamanho.value == "grande" )&& (tipo.value == "branca" || tipo.value == "colorida")){
+          botao1.style.display = 'none';
+          div_cor.innerHTML = '';
+          div_distancia.innerHTML = '';
+          div_tamanho.innerHTML = '';
+          pg2.style.display = 'block';
+         } else {
+             alert('Preencha todos os campos corretamente')
+         }
+}
+
+</script>

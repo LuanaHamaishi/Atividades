@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+
+</head>
+
+<body>
+    
+
+    <select id="especies" onchange="showopt()">
+        <option >-Escolha uma espécie-</option>
+        <option value="oviparo">Ovíparos</option>
+        <option value="mamifero">Mamíferos</option>
+    </select>
+
+    <select id="oviparos" style="display: none; " onchange="showovp()">
+        <option value="escolha_ovip">-Escolha um ovíparo-</option>
+        <option value="galinha">Galinha</option>
+        <option value="peixe">Peixe</option>
+        <option value="tartaruga">Tartaruga</option>
+    </select> <br> <br>
+
+    <select id="mamiferos" style="display: none;" onchange="showmamif()">
+        <option value="escolha_mamif">-Escolha um mamífero-</option>
+        <option value="elefante">Elefante</option>
+        <option value="porco">Porco</option>
+        <option value="coelho">Coelho</option>
+    </select> <br> <br>
+
+    <img id="mostrar" style="width: 200px;" style="display: none;"> <br> <br>
+
+    <div id="preco" style="display: none;">
+        Digite o preço do animal: <br>
+        <input id="precoAnimal" type="text" placeholder="Digite o preço"> <br>
+
+        <button onclick="calc_imp()">
+            Calcular imposto
+        </button> <br>
+
+        O imposto será de: R$<b id="imposto">0.00 </b>
+
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function showopt() {
+
+        alert(especies.value);
+
+        if (especies.value == "oviparo") {
+            oviparos.style.display = 'block';
+            especies.style.display = 'none';
+
+        } else {
+            if (especies.value == "mamifero") {
+                mamiferos.style.display = 'block';
+                especies.style.display = 'none';
+            }
+        }
+
+
+    }
+
+    function showovp() {
+       
+        if (oviparos.value == "galinha") {
+            mostrar.style.display = 'block';
+            mostrar.src = 'https://certifiedhumanebrasil.org/wp-content/uploads/2018/10/Galinhas-Poedeiras.jpg';
+            preco.style.display = 'block';
+        }
+        else if (oviparos.value == "peixe") {
+            mostrar.style.display = 'block';
+            mostrar.src = 'https://i2.wp.com/fishtop.com.br/wp-content/uploads/2021/01/peixe-palhaco.jpg?w=600&ssl=1';
+            preco.style.display = 'block';
+        }
+        else if (oviparos.value == "tartaruga") {
+            mostrar.style.display = 'block';
+            mostrar.src = 'https://cdn.diferenca.com/imagens/tartaruga-marinha-cke.jpg';
+            preco.style.display = 'block';
+        }  
+        else if (mostrar.style.display = 'block'){
+            mostrar.style.display = 'none';
+            preco.style.display = 'none';
+        }
+
+     }
+
+     function showmamif(){
+        if (mamiferos.value == "elefante") {
+            mostrar.style.display = 'block';
+            mostrar.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Qg8VSOaweAj6dqPSVn8JcnPGsVGPjhiZRUdy9OifBaGNDmRxAt25O1jM6-LWre50_-E&usqp=CAU';
+            preco.style.display = 'block';
+        }
+        else if (mamiferos.value == "porco") {
+            mostrar.style.display = 'block';
+            mostrar.src = 'https://super.abril.com.br/wp-content/uploads/2021/05/porquinho_site.jpg?quality=70&strip=info&w=680&h=453&crop=1';
+            preco.style.display = 'block';
+        }
+        else if (mamiferos.value == "coelho") {
+            mostrar.style.display = 'block';
+            mostrar.src = ' https://www.petz.com.br/blog/wp-content/uploads/2021/02/com-quantos-dias-os-filhotes-de-coelhos-comecam-a-comer-roedores.jpg';
+            preco.style.display = 'block';
+        } else if (mostrar.style.display = 'block'){
+            mostrar.style.display = 'none';
+            preco.style.display = 'none';
+        }
+     }
+
+   function calc_imp(){
+       var valorAnimal = Number(precoAnimal.value);
+
+       if (especies.value == "mamifero"){
+           imposto.innerHTML = `${valorAnimal*0.1}`;
+       }
+       else{
+           imposto.innerHTML = `${valorAnimal*0.05}`;
+       }
+   }
+</script>

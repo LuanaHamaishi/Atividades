@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+  
+   Informe a sua altura <input id="altura"> <br>
+
+<button onclick="verifica()">Varificar</button>
+</body>
+</html>
+
+<script>
+
+    function verifica() {
+        var ax_altura = altura.value;
+        if (ax_altura > 1.80) {
+            alert ("Você pode ser jogador de vôlei ou basquete")
+        } else if (ax_altura <= 1.60) {
+            alert ("Você pode ser piloto de corrida")
+        } else {
+            alert ("Você pode ser jogador de futebol")
+        }
+    }
+</script>
